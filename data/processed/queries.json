@@ -1,0 +1,22 @@
+[
+    {
+        "query": "kepemilikan sabu",
+        "ground_truth": "CASE_001"
+    },
+    {
+        "query": "peredaran narkotika",
+        "ground_truth": "CASE_005"
+    },
+    {
+        "query": "penggunaan ganja",
+        "ground_truth": "CASE_009"
+    },
+    {
+        "query": "barang bukti sabu",
+        "ground_truth": "CASE_013"
+    },
+    {
+        "query": "kurir narkoba",
+        "ground_truth": "CASE_021"
+    }
+]
