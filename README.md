@@ -297,7 +297,7 @@ Beberapa pengembangan yang dapat dilakukan pada penelitian berikutnya antara lai
 
 ## Penulis
 
-Nama : Tegar Reski Pratama dan Aldela Kurniati
+Nama : Tegar Reski Pratama dan Aldela Kurniawati
 
 Program Studi : Informatika
 
