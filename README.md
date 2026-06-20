@@ -2,7 +2,7 @@
 
 ## Deskripsi Proyek
 
-Proyek ini merupakan implementasi metode **Case-Based Reasoning (CBR)** untuk melakukan analisis putusan pengadilan Indonesia. Sistem dibangun dengan memanfaatkan dokumen putusan sebagai basis kasus (case base), kemudian melakukan pencarian kasus serupa dan memberikan rekomendasi berdasarkan kasus-kasus yang pernah terjadi sebelumnya.
+Proyek ini merupakan implementasi metode **Case-Based Reasoning (CBR)** untuk melakukan analisis putusan pengadilan Indonesia. Sistem dibangun dengan memanfaatkan dokumen putusan sebagai basis kasus (*case base*), kemudian melakukan pencarian kasus serupa dan memberikan rekomendasi berdasarkan kasus-kasus yang pernah terjadi sebelumnya.
 
 Proyek ini dikembangkan sebagai tugas mata kuliah **Penalaran Komputer** Program Studi Informatika Universitas Muhammadiyah Malang.
 
@@ -12,9 +12,11 @@ Tujuan dari proyek ini adalah:
 
 1. Membangun basis kasus dari dokumen putusan pengadilan.
 2. Melakukan representasi kasus menggunakan metadata dan fitur teks.
-3. Mengimplementasikan mekanisme pencarian kasus serupa (case retrieval).
-4. Mengimplementasikan mekanisme pemanfaatan solusi dari kasus sebelumnya (case reuse).
+3. Mengimplementasikan mekanisme pencarian kasus serupa (*case retrieval*).
+4. Mengimplementasikan mekanisme pemanfaatan solusi dari kasus sebelumnya (*case reuse*).
 5. Melakukan evaluasi performa model menggunakan berbagai metrik pengukuran.
+
+---
 
 ## Tahapan Case-Based Reasoning
 
@@ -54,6 +56,8 @@ Evaluasi dilakukan menggunakan:
 * Recall
 * F1-Score
 
+---
+
 ## Struktur Repository
 
 ```text
@@ -79,29 +83,73 @@ Penalaran-Komputer-CBR
 └── .gitignore
 ```
 
+---
+
 ## Kebutuhan Sistem
+
+Perangkat lunak yang digunakan:
 
 * Python 3.10 atau lebih baru
 * Jupyter Notebook
+* Git (opsional)
+
+Library yang digunakan:
+
+* pandas
+* numpy
+* scikit-learn
+* sentence-transformers
+* transformers
+* torch
+* PyPDF2
+* matplotlib
+
+---
 
 ## Instalasi
 
-Clone repository:
+### 1. Clone Repository
 
 ```bash
 git clone https://github.com/TegarReskiPratama/Penalaran-Komputer-CBR.git
 cd Penalaran-Komputer-CBR
 ```
 
-Install seluruh dependency:
+### 2. Membuat Virtual Environment (Opsional)
+
+Windows:
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+Linux/MacOS:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3. Install Dependency
 
 ```bash
 pip install -r requirements.txt
 ```
 
+### 4. Verifikasi Instalasi
+
+```bash
+pip list
+```
+
+Pastikan seluruh library pada `requirements.txt` telah terpasang.
+
+---
+
 ## Cara Menjalankan Program
 
-Jalankan Jupyter Notebook:
+### Menjalankan Jupyter Notebook
 
 ```bash
 jupyter notebook
@@ -113,15 +161,105 @@ Kemudian buka file:
 notebooks/Penalaran_Komputer_CBR_215_209.ipynb
 ```
 
-Jalankan seluruh cell secara berurutan dari atas ke bawah hingga proses selesai.
+---
+
+## Pipeline End-to-End
+
+Jalankan seluruh cell notebook secara berurutan dari atas ke bawah dengan tahapan berikut:
+
+### Tahap 1 - Case Base Construction
+
+* Membaca dokumen putusan.
+* Membersihkan teks.
+* Menyimpan hasil preprocessing.
+
+Output:
+
+```text
+cases.csv
+cases.json
+```
+
+### Tahap 2 - Case Representation
+
+* Ekstraksi metadata.
+* Pembuatan fitur teks.
+
+### Tahap 3 - Case Retrieval
+
+* TF-IDF Vectorization.
+* SVM Classification.
+* Naive Bayes Classification.
+* BERT Retrieval.
+
+### Tahap 4 - Case Solution Reuse
+
+* Pengambilan kasus serupa.
+* Prediksi solusi berdasarkan kasus terdahulu.
+
+Output:
+
+```text
+predictions.csv
+```
+
+### Tahap 5 - Evaluation
+
+* Accuracy
+* Precision
+* Recall
+* F1-Score
+
+Output:
+
+```text
+retrieval_metrics.csv
+prediction_metrics.csv
+```
+
+---
+
+## Contoh Perintah
+
+Menjalankan Jupyter Notebook:
+
+```bash
+jupyter notebook
+```
+
+Install seluruh dependency:
+
+```bash
+pip install -r requirements.txt
+```
+
+Menampilkan daftar package:
+
+```bash
+pip list
+```
+
+---
 
 ## Dataset
 
 Dataset yang digunakan berasal dari dokumen putusan pengadilan yang diperoleh dari Direktori Putusan Mahkamah Agung Republik Indonesia.
 
-## Hasil yang Dihasilkan
+Folder penyimpanan data:
 
-Program menghasilkan beberapa file keluaran sebagai berikut:
+```text
+data/raw/
+```
+
+Hasil pengolahan data disimpan pada:
+
+```text
+data/processed/
+```
+
+---
+
+## Hasil yang Dihasilkan
 
 | File                   | Keterangan                   |
 | ---------------------- | ---------------------------- |
@@ -131,6 +269,8 @@ Program menghasilkan beberapa file keluaran sebagai berikut:
 | predictions.csv        | Hasil prediksi kasus         |
 | retrieval_metrics.csv  | Hasil evaluasi retrieval     |
 | prediction_metrics.csv | Hasil evaluasi klasifikasi   |
+
+---
 
 ## Hasil Evaluasi
 
@@ -142,6 +282,8 @@ Program menghasilkan beberapa file keluaran sebagai berikut:
 
 Berdasarkan hasil evaluasi, seluruh model menghasilkan performa yang sama pada dataset yang digunakan. Hal ini menunjukkan bahwa ukuran dataset yang relatif terbatas belum mampu menunjukkan perbedaan performa yang signifikan antara metode machine learning tradisional dan pendekatan berbasis transformer.
 
+---
+
 ## Pengembangan Selanjutnya
 
 Beberapa pengembangan yang dapat dilakukan pada penelitian berikutnya antara lain:
@@ -150,6 +292,8 @@ Beberapa pengembangan yang dapat dilakukan pada penelitian berikutnya antara lai
 * Melakukan fine-tuning model BERT khusus domain hukum.
 * Menggabungkan fitur metadata dengan embedding semantik.
 * Mengembangkan metode hybrid retrieval untuk meningkatkan akurasi pencarian kasus.
+
+---
 
 ## Penulis
 
@@ -162,6 +306,8 @@ Universitas : Universitas Muhammadiyah Malang
 Mata Kuliah : Penalaran Komputer
 
 Tahun Akademik : 2025/2026
+
+---
 
 ## Lisensi
 
