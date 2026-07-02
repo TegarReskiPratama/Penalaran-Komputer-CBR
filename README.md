@@ -1,4 +1,4 @@
-# Sistem Case-Based Reasoning (CBR) untuk Analisis Putusan Pengadilan Indonesia
+# Sistem Case-Based Reasoning untuk Analisis Putusan Pidana Khusus Pertambangan Berbasis TF-IDF dan BERT Retrieval
 
 ## Deskripsi Proyek
 
